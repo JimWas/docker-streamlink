@@ -54,7 +54,9 @@ STOPSIGNAL SIGINT
 
 # Use dumb-init as PID 1 to handle signals properly
 ENTRYPOINT [ "dumb-init", "--", "streamlink" ]
-CMD ["--help"]
+
+# This is the line that has been changed to include your arguments
+CMD ["--progress", "force", "--output", "{id}.ts", "twitch.tv/illphated", "480p"]
 
 ARG VERSION
 ARG RELEASE
